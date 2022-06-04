@@ -1,0 +1,58 @@
+Kubernates Aprendizado
+
+- Orquestrador de Containers
+Gerencia multiplas máquinas trabalhando em conjunto (Cluster)
+- O Kubernates Gerencia o Cluster
+
+
+Arquitetura do Kubernates
+ * Possui vários resources
+ - pod, rs, deploy, vol, hpa, pv, ing, pvc, svc, sc, ds, quota
+
+Denominações
+ * Master / nodes
+ Master (Gerencia o clusters, manter e atualizar o estado, receber e executar novos comandos
+ Nodes (executam os nodes (aplicações))
+
+ Master (Control Plane) (api, c-m(controler manager), sched(schedule), etcd)
+ Nodes (kubelet, k-proxy)
+
+ kubectl
+  -> Executa comandos para api do Kubernates
+
+  --Comandos
+  kubectl get nodes
+
+
+
+  ---------- PODS ----------
+  - Cápsula -> Pode conter um ou mais containers
+  - - Faz esta operação de maneira imperativa ou declarativa
+
+  - Pods são efêmeros
+  - Compartilham o mesmo IP (diferencia por portas)
+  - Podem compartilhar volumes
+
+  --- Comandos (Maneira Imperativa)---
+  Criar pod
+   * kubectl run <nome_para_o_pod> --image=nginx:latest
+
+  Listar
+   * kubectl get pods
+
+  Acompanhar o pod
+   * kubectl get pods --watch
+
+  Informações sobre o pod
+   * kubectl describe pod <nome_do_pod>
+
+  Editar o pod
+   * kubectl edit pod <nome_do_pod>
+
+ --- Comandos (Maneira Declarativa) ---
+ Cria o arquivo .yaml
+ Especifica a versão, tipo, imagem, os containers ...
+ 
+ Para rodar
+  * kubectl apply -f .\first-pod.yaml
+
