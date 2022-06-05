@@ -1,0 +1,4 @@
+kubectl delete service --all ; kubectl delete configmap --all ; kubectl delete node --all ; kubectl delete pods --all ; kubectl apply -f portal-noticias.yaml ; kubectl apply -f svc-portal-noticias.yaml ; kubectl apply -f sistema-noticias.yaml ; kubectl apply -f  svc-sistema-noticias.yaml ; kubectl apply -f db-noticias.yaml ; kubectl apply -f svc-db-noticias.yaml ; kubectl apply -f db-configmap.yaml ; kubectl apply -f sistema-configmap.yaml ; kubectl get pods --watch
+
+
+kubectl delete pods --all ; kubectl apply -f portal-noticias.yaml ; kubectl apply -f svc-portal-noticias.yaml ; kubectl apply -f sistema-noticias.yaml ; kubectl apply -f  svc-sistema-noticias.yaml ; kubectl apply -f db-noticias.yaml ; kubectl apply -f svc-db-noticias.yaml ; kubectl apply -f db-configmap.yaml ; kubectl apply -f sistema-configmap.yaml ; kubectl apply -f portal-configmap.yaml ; kubectl get pods --watch
