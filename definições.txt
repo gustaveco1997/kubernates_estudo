@@ -25,7 +25,7 @@ Denominações
 
 
 
-  ---------- PODS ----------
+  1) ---------- PODS ----------
   - Cápsula -> Pode conter um ou mais containers
   - - Faz esta operação de maneira imperativa ou declarativa
 
@@ -39,6 +39,9 @@ Denominações
 
   Listar
    * kubectl get pods
+
+  Listar com mais informações
+   * kubectl get pods -o wide
 
   Acompanhar o pod
    * kubectl get pods --watch
@@ -56,3 +59,37 @@ Denominações
  Para rodar
   * kubectl apply -f .\first-pod.yaml
 
+ Para deletar a partir do arquivo
+  * kubectl delete -f .\first-pod.yaml
+
+ Navegar dentro do pod:
+  * kubectl exec <nome_do_pod> -it -- bash  
+
+
+2) ---------- SERVICES (SVC) ----------
+- Expões a aplicação executada em um ou mais pods
+- Proveem IP's fixos para comunicação
+- Proveem DNS para um ou mais pods
+- São capazes de fazer balanceamento de carga
+
+
+2.1) Cluster IP
+- Comunicação entre diferentes pods dentro de um mesmo Cluster
+- Cria um .yaml, só que do kind service.
+- o Type é ClusterIP
+- Para sinalizar que ele deve comunicar com outros pods,
+deve explicitar nas Labels
+- Fica explícito tanto no pod comum (metadata -> labels) e também no 
+spec do serviço (selector)
+
+
+----- COMANDOS -----
+Listar Services 
+ * kubectl get services
+
+2.2) NodePort
+- Permitem a comunicação com o mundo externo (através do navegador ...)
+- Também funcionam como ClusterIP
+
+
+2.3) LoadBalancer
