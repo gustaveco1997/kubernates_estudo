@@ -93,3 +93,12 @@ Listar Services
 
 
 2.3) LoadBalancer
+
+2.4) ConfigMap (cm)
+- Armazena configurações (desacopla as configurações das definições do map)
+- Permite a reutilização em outros maps
+
+
+
+
+------------------  VARIÁVEIS DE AMBIENTE ------------------
